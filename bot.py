@@ -7,6 +7,11 @@ from telegram.ext import (
 import os
 TOKEN = os.getenv("BOT_TOKEN")
 
+CHANNEL_ID = os.getenv("CHANNEL_ID")
+
+OWNER_ID = int(os.getenv("OWNER_ID"))
+
+
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     level=logging.INFO
@@ -154,4 +159,5 @@ app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, anti_spam))
 
 print("🔥 Advanced Bot Running…")
 app.run_polling()
+
 
