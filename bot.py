@@ -4,8 +4,8 @@ from telegram.ext import (
     Application, CommandHandler, MessageHandler,
     ContextTypes, filters
 )
-
-TOKEN = "8481301572:AAECc_dcvcgqk-VlULawY2vk--6RLwpYlvc"
+import os
+TOKEN = os.getenv("BOT_TOKEN")
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -154,3 +154,4 @@ app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, anti_spam))
 
 print("🔥 Advanced Bot Running…")
 app.run_polling()
+
